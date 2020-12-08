@@ -1,8 +1,8 @@
-wget https://raw.githubusercontent.com/Zhongping-Zhang/CS655-mini-project/main/src/Web%2BWebServer/package.json
-wget https://raw.githubusercontent.com/Zhongping-Zhang/CS655-mini-project/main/src/Web%2BWebServer/package-lock.json
-wget https://raw.githubusercontent.com/Zhongping-Zhang/CS655-mini-project/main/src/Web%2BWebServer/client/404.html
-wget https://raw.githubusercontent.com/Zhongping-Zhang/CS655-mini-project/main/src/Web%2BWebServer/client/status.html
-wget https://raw.githubusercontent.com/Zhongping-Zhang/CS655-mini-project/main/src/Web%2BWebServer/index.js
+wget https://raw.githubusercontent.com/youzi1984/CS655ProjectFall2020/main/WebServer/package.json
+wget https://raw.githubusercontent.com/youzi1984/CS655ProjectFall2020/main/WebServer/package-lock.json
+wget https://raw.githubusercontent.com/youzi1984/CS655ProjectFall2020/main/WebServer/404.html
+wget https://raw.githubusercontent.com/youzi1984/CS655ProjectFall2020/main/WebServer/status.html
+wget https://raw.githubusercontent.com/youzi1984/CS655ProjectFall2020/main/WebServer/index.js
 
 
 mkdir client
