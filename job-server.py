@@ -80,7 +80,7 @@ if __name__ == '__main__':
     
     #wait for all incoming workers
     while True:
-        if len(g_conn_pool) == 5:
+        if len(g_conn_pool) == 3:
             break
     
     for i in range(1, len(g_conn_pool)):
