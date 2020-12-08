@@ -1,0 +1,211 @@
+<html>
+    <head>
+        <title> Password Cracker </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    </head>
+
+    <body>
+        <div class="container">
+    
+            <h2><center>CS655 Mini Project, Password Cracker</center></h2>
+            <h4><center> <b>Team</b>: Yuqi Guo, Lei Lai, 
+                Andrew Suh, Zhongping Zhang </center></h4>
+            <h4><center> <a href="https://github.com/atsuh0124/CS655ProjectFall2020GLSZ" target="_blank"><b>Link to Github Repo</b></a> </center></h4>
+            <br>
+            
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <form name="ReqForm" style="margin-bottom: 15px;">
+                        <table class="table table-striped" style="margin-bottom:0px;">
+                            <tbody>
+                                
+                                <tr>
+                                    <td class="col-md-6" style="vertical-align: middle;">
+                                      <center>Hashed MD5</center>
+                                    </td>
+                                    <td class="col-md-6">
+                                        <input type="text" class="form-control" name="Hashed_MD5" required pattern=".{32,32}">
+                                        <div style="font-style:italic;font-size:8px">*lowercase letters</div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="col-md-6" style="vertical-align: middle;">
+                                      <center>Number of workers</center>
+                                    </td>
+                                    <td class="col-md-6">
+                                        <input type="number" class="form-control" name="Number_of_Node" required onchange="reConfigNumberOfNode()" min="1" max="10">
+                                    
+                                        <div style="font-style:italic;font-size:8px">*range: [1, 10]</div>
+                                    </td>
+                                </tr>
+                                
+<!--
+                                <tr>
+                                    <td class="col-md-6" style="vertical-align: middle;">
+                                      <center>Partition size</center>
+                                    <td class="col-md-6">
+                                        <input type="number" class="form-control" name="Size_of_Partition" required onchange="reConfigPartitionSize()" min="1" max="2000000000">
+                                        
+                                        <div style="font-style:italic;font-size:8px">*range: [1, 2000000000]</div>
+                                    </td>
+                                </tr>
+-->
+                                
+                                <tr>
+                                    <td class="col-md-6"></td>
+                                    <td class="col-md-6">
+                                        <input type="submit" value="Submit" name="submission">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+<!--                <p class="text-justify" style="font-style: italic">*Note: after submit, you are able to change the number of cracking node and partitioning size on the fly.</p>-->
+            
+            
+            </div>
+        </div>
+        
+        <div class="container">
+              <table class="table table-striped" id="displayTable">
+                  <thead>
+                      <tr>
+                          <th scope="col">Hashed MD5</th>
+                          <th scope="col">Password</th>
+                          <th scope="col">Turn Around Time(ms)</th>
+                      </tr>
+                      <tr id="Entries">
+                      </tr>
+                  </thead>
+                  <tbody></tbody>
+              </table>
+        </div>
+        
+        
+        <script>
+    $(document).ready(function() {
+        // event.preventDefault();
+        // process the form
+        $('form').submit(function(event) {
+          $('input[name=submission]').attr("disabled", true);
+          var date1 = new Date();
+          console.log(date1);
+          event.preventDefault();
+          console.log($('input[name=Hashed_MD5]').val());
+          var inputMD5 = $('input[name=Hashed_MD5]').val();
+          var formData = {
+              'Hashed_MD5'              : $('input[name=Hashed_MD5]').val(),
+              'Number_of_Node'              : $('input[name=Number_of_Node]').val(),
+//              'Size_of_Partition'              : $('input[name=Size_of_Partition]').val()
+          };
+          // var targetHost = $('input[name=Target_Host]').val();
+          // process the form
+          $.ajax({
+              type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+              url         : 'http://'+document.location.hostname+':9007/getProgess', // the url where we want to POST
+              data        : formData, // our data object
+              dataType    : 'json',
+              timeout     : 0
+          })
+          .done(function(result) {
+              console.log(result["Password"]);
+              var date2 = new Date();
+              var diff = date2 - date1; //milliseconds interval
+              console.log(diff);
+              var ListData = '';
+              ListData += '<tr id=Entries>';
+              ListData += '<td>'+inputMD5+'</td>';
+              ListData += '<td>'+result["Password"]+'</td>';
+              ListData += '<td>'+diff+'</td>';
+              ListData += '</tr>';
+
+          // We use .html instead of .append here, to make sure we don't add the same
+          // entries when the interval is ran for the n-th time.
+          // $('#Entries').append(ListData);
+          $('#displayTable tr:last').after(ListData);
+          // setInterval(FetchProgress(), 500);
+          })
+          .fail(function(xhr, status, error) {
+              console.log(error);
+              alert(error);
+          })
+          .always(function(data){
+            $('input[name=submission]').attr("disabled", false);
+          });
+        });
+      });
+      function reConfigNumberOfNode(){
+        // var targetHost = $('input[name=Target_Host]').val();
+        if(!NumberOfNodeCheck()){
+          return;
+        }
+        var formData = {
+            'Number_of_Node'              : $('input[name=Number_of_Node]').val()
+        };
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'http://'+document.location.hostname+':9007/reConfigNumberOfNode', // the url where we want to POST
+            data        : formData, // our data object
+        })
+      }
+            
+//      function reConfigPartitionSize(){
+//        // var targetHost = $('input[name=Target_Host]').val();
+//        if(!PartitionSizeCheck()){
+//          return;
+//        }
+//        var formData = {
+//            'Size_of_Partition'              : $('input[name=Size_of_Partition]').val()
+//        };
+//        $.ajax({
+//            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+//            url         : 'http://'+document.location.hostname+':9007/reConfigPartitionSize', // the url where we want to POST
+//            data        : formData, // our data object
+//        })
+//      }
+            
+            
+      function NumberOfNodeCheck()
+      {
+          if(!(Number.isInteger(+$('input[name=Number_of_Node]').val()))) {
+            alert("invalid input! \nexpected Integer");
+            return false;
+          }
+          if(parseInt($('input[name=Number_of_Node]').val()) < $('input[name=Number_of_Node]').attr('min')){
+              alert("invalid input! \nexpected range [1,10]");
+              return false;
+          }
+          else if(parseInt($('input[name=Number_of_Node]').val()) > $('input[name=Number_of_Node]').attr('max')){
+              alert("invalid input! \nexpected range [1,10]");
+              return false;
+          }
+          else return true;
+      }
+//      function PartitionSizeCheck()
+//      {
+//          if(!(Number.isInteger(+$('input[name=Size_of_Partition]').val()))) {
+//            alert("invalid input! \nexpected Integer");
+//            return false;
+//          }
+//          if(parseInt($('input[name=Size_of_Partition]').val()) < $('input[name=Size_of_Partition]').attr('min')){
+//              alert("invalid input! \nexpected range [1,2000000000]");
+//              return false;
+//          }
+//          else if(parseInt($('input[name=Size_of_Partition]').val()) > $('input[name=Size_of_Partition]').attr('max')){
+//              alert("invalid input! \nexpected range [1,2000000000]");
+//              return false;
+//          }
+//          else return true;
+//      }
+            
+    </script>
+    </body>
+</html>
