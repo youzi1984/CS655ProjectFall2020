@@ -38,20 +38,28 @@ Otherwise, start with Section 1 to set up servers on GENI.
 ### Section 2: Use the web interface to interact
 
 1.  Run the following commands in order to start the system
-
-    For Webserver: \$ node index.js
     
     For Job Server: \$ python job-server.py
     
-    For workers: \$ python worker.py
+    For Webserver: \$ node index.js
 
-1.  In a web browser, go to "webserver_ip:9007", where webserver_ip can be found on GENI.
+2.  In a web browser, go to "webserver_ip:9007", where webserver_ip can be found on GENI.
 
     For our resource, go to http://web-server.passwordcrackerglsz.ch-geni-net.geni.uchicago.edu:9007/
     
-2.  Enter md5 hash, number of workers (1-10) and press "submit"
+3.  Enter md5 hash.
+    
+    Select number of workers (1-10) with the arrow on the right.(Do not enter directly)
+    
+    press "submit"
    
     Wait until the result comes back. 
+    
+4. For each workers: \$ python worker.py
+
+   When all workers get connected, they will receive a message.
+    
+
        
  **Important assumptions**
  
