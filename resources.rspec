@@ -1,0 +1,319 @@
+<rspec xmlns="http://www.geni.net/resources/rspec/3" xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" xmlns:tour="http://www.protogeni.net/resources/rspec/ext/apt-tour/1" xmlns:jacks="http://www.protogeni.net/resources/rspec/ext/jacks/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.geni.net/resources/rspec/3    http://www.geni.net/resources/rspec/3/request.xsd" type="request">
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="web-server" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35943" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <routable_control_ip xmlns="http://www.protogeni.net/resources/rspec/ext/emulab/1"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pcvm2-14.geni.uchicago.edu" port="22" username="matta"/>
+      <login authentication="ssh-keys" hostname="pcvm2-14.geni.uchicago.edu" port="22" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pcvm2-14.geni.uchicago.edu" port="22" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pcvm2-14.geni.uchicago.edu" port="22" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pcvm2-14.geni.uchicago.edu" port="22" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pcvm2-14.geni.uchicago.edu" port="22" username="asuh9"/>
+      <emulab:console server="pcvm2-14.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-0" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35954" mac_address="02da5bece567">
+      <ip address="10.10.1.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-14" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="web-server.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu" ipv4="192.170.230.103"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="jobs-server" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35942" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25610" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25610" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25610" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25610" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25610" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25610" username="asuh9"/>
+      <emulab:console server="pc2.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-1" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35955" mac_address="021cefb7f866">
+      <ip address="10.10.1.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-2" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35957" mac_address="028f826d5114">
+      <ip address="10.10.2.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-4" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35960" mac_address="02852d20a46c">
+      <ip address="10.10.3.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-6" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:eth1" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35963" mac_address="02a49a0491c9">
+      <ip address="10.10.4.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-8" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35966" mac_address="029a5a0808a2">
+      <ip address="10.10.5.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-10" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35969" mac_address="027f5cbba59f">
+      <ip address="10.10.6.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-12" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:eth1" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35972" mac_address="02e7faa8a331">
+      <ip address="10.10.7.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-14" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35975" mac_address="02150ba8e648">
+      <ip address="10.10.8.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-16" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35978" mac_address="0275ec031440">
+      <ip address="10.10.9.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-18" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35981" mac_address="02b5321d7d3a">
+      <ip address="10.10.10.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="interface-20" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35984" mac_address="0247d4e61570">
+      <ip address="10.10.11.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-13" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="jobs-server.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-1" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35944" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25612" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25612" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25612" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25612" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25612" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25612" username="asuh9"/>
+      <emulab:console server="pc2.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-11" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35970" mac_address="02d38a513b65">
+      <ip address="10.10.6.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-15" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-1.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-7" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35949" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25617" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25617" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25617" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25617" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25617" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25617" username="asuh9"/>
+      <emulab:console server="pc2.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-17" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35979" mac_address="02fb076bd576">
+      <ip address="10.10.9.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-20" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-7.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-10" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35945" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25613" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25613" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25613" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25613" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25613" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25613" username="asuh9"/>
+      <emulab:console server="pc2.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-19" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35982" mac_address="02350f8a6c0e">
+      <ip address="10.10.10.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-16" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-10.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-5" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc3" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35941" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25611" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25611" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25611" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25611" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25611" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25611" username="asuh9"/>
+      <emulab:console server="pc3.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-7" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc3:eth1" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35964" mac_address="026ec5e423d3">
+      <ip address="10.10.4.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm3-3" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-5.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-6" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35948" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25616" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25616" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25616" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25616" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25616" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25616" username="asuh9"/>
+      <emulab:console server="pc2.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-9" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35967" mac_address="02c51599822f">
+      <ip address="10.10.5.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-19" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-6.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-3" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35947" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25615" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25615" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25615" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25615" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25615" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25615" username="asuh9"/>
+      <emulab:console server="pc2.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-5" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35961" mac_address="028056ae4414">
+      <ip address="10.10.3.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-18" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-3.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-2" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35946" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25614" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25614" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25614" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25614" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25614" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25614" username="asuh9"/>
+      <emulab:console server="pc2.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-3" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35958" mac_address="02c1758acd8c">
+      <ip address="10.10.2.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-17" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-2.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-4" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc3" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35940" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25610" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25610" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25610" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25610" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25610" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc3.geni.uchicago.edu" port="25610" username="asuh9"/>
+      <emulab:console server="pc3.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-13" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc3:eth1" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35973" mac_address="020fc6b50724">
+      <ip address="10.10.7.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm3-2" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-4.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-8" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35950" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25618" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25618" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25618" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25618" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25618" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25618" username="asuh9"/>
+      <emulab:console server="pc2.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-15" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35976" mac_address="023a3f1c915f">
+      <ip address="10.10.8.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-21" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-8.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="worker-9" component_manager_id="urn:publicid:IDN+geni.uchicago.edu+authority+cm" component_id="urn:publicid:IDN+geni.uchicago.edu+node+pc2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35951" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25619" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25619" username="zpzhang"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25619" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25619" username="leilai"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25619" username="yqguo"/>
+      <login authentication="ssh-keys" hostname="pc2.geni.uchicago.edu" port="25619" username="asuh9"/>
+      <emulab:console server="pc2.geni.uchicago.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-21" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35985" mac_address="0265fa8f28de">
+      <ip address="10.10.11.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm2-22" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="worker-9.PasswordCrackerGLSZ.ch-geni-net.geni.uchicago.edu"/>
+  </node>
+  <link client_id="link-0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35953">
+    <interface_ref client_id="interface-0" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35954"/>
+    <interface_ref client_id="interface-1" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35955"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-1" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35956">
+    <interface_ref client_id="interface-2" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35957"/>
+    <interface_ref client_id="interface-3" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35958"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-2" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35959">
+    <interface_ref client_id="interface-4" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35960"/>
+    <interface_ref client_id="interface-5" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35961"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-3" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35962" vlantag="260">
+    <interface_ref client_id="interface-6" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:eth1" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35963"/>
+    <interface_ref client_id="interface-7" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc3:eth1" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35964"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-4" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35965">
+    <interface_ref client_id="interface-8" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35966"/>
+    <interface_ref client_id="interface-9" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35967"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-5" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35968">
+    <interface_ref client_id="interface-10" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35969"/>
+    <interface_ref client_id="interface-11" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35970"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-6" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35971" vlantag="259">
+    <interface_ref client_id="interface-12" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:eth1" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35972"/>
+    <interface_ref client_id="interface-13" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc3:eth1" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35973"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-7" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35974">
+    <interface_ref client_id="interface-14" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35975"/>
+    <interface_ref client_id="interface-15" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35976"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-8" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35977">
+    <interface_ref client_id="interface-16" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35978"/>
+    <interface_ref client_id="interface-17" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35979"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-9" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35980">
+    <interface_ref client_id="interface-18" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35981"/>
+    <interface_ref client_id="interface-19" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35982"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <link client_id="link-10" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35983">
+    <interface_ref client_id="interface-20" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35984"/>
+    <interface_ref client_id="interface-21" component_id="urn:publicid:IDN+geni.uchicago.edu+interface+pc2:lo0" sliver_id="urn:publicid:IDN+geni.uchicago.edu+sliver+35985"/>
+    <component_manager name="urn:publicid:IDN+geni.uchicago.edu+authority+cm"/>
+  </link>
+  <rs:site_info xmlns:rs="http://www.protogeni.net/resources/rspec/ext/site-info/1">
+    <rs:location country="" latitude="41.785644" longitude="-87.597098"/>
+  </rs:site_info>
+</rspec>
