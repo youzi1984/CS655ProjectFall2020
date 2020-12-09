@@ -1,18 +1,18 @@
 # CS655ProjectFall2020
 ## Run password cracker
 
-If you're running the project on nodes that are already reserved by us, please go to Section 2 directly.
+If you're running the project on nodes that are already reserved and configured by us, then please go to Section 2 directly.
 Otherwise, start with Section 1 to set up servers on GENI.
 
-### Section 1: Deploy the project on GENI
+### Section 1: Deploying the project on GENI
 
 1. Reserve resources on GENI
 
-   Use the Rspec "password-cracker" to reserve nodes.
+   Use the Rspec "resources.rspec" to reserve the resources on GENI.
 
-2. Set up the web server
+2. Set up the web-server
 
-   Log into the node with clientID "Webserver" and run the following one by one:
+   Log into the "web-server" node and run the following one by one to configure the node:
 
    \$ wget https://raw.githubusercontent.com/youzi1984/CS655ProjectFall2020/main/webserver.sh
    
@@ -20,44 +20,45 @@ Otherwise, start with Section 1 to set up servers on GENI.
    
    \$ ./webserver.sh
 
-3. Set up the job server
+3. Set up the jobs-server
 
-   Log into the node with clientID ""
+   Log into the "jobs-server" node and run the following command to retrieve the code that needs to run on it:
 
    \$ wget https://raw.githubusercontent.com/youzi1984/CS655ProjectFall2020/main/job-server.py
 
-4. Set up workers
+4. Set up the worker nodes
 
-   Log into the nodes with clientID "workerx", where x is number 1 to 10.
+   Log into the nodes name "worker-x", where x is number 1 to 10.
 
-   Run the following commands:
+   Run the following command on each to retrieve the code that needs to run on it:
 
    \$ wget https://raw.githubusercontent.com/youzi1984/CS655ProjectFall2020/main/worker.py
    
    
-### Section 2: Use the web interface to interact
+### Section 2: Using the web interface to interact with the system
+Note: Make sure to do the following in this precise order.
 
-1.  Run the following commands in order to start the system
+1.  Run the following commands in order to start the system, running each on their respective nodes:
     
-    For Job Server: \$ python job-server.py
+    For the jobs-server: \$ python job-server.py
     
-    For Webserver: \$ node index.js
+    For the web-server: \$ node index.js
 
 2.  In a web browser, go to "webserver_ip:9007", where webserver_ip can be found on GENI.
 
-    For our resource, go to http://web-server.passwordcrackerglsz.ch-geni-net.geni.uchicago.edu:9007/
+    If you're using our GENI resources, go to http://web-server.passwordcrackerglsz.ch-geni-net.geni.uchicago.edu:9007/
     
-3.  Enter md5 hash.
+3.  Enter the md5 hash belonging to the 5 letter password with alphabet (a-z, A-Z).
     
-    Select number of workers (1-10) with the arrow on the right.(Do not enter directly)
+    Select the number of workers (1-10) with the arrow on the right (do not enter directly).
     
     press "submit"
    
     Wait until the result comes back. 
     
-4. For each workers: \$ python worker.py
+4. For each of the workers, run the following command: \$ python worker.py
 
-   When all workers get connected, they will receive a message.
+   When all workers are connected to the jobs-server, they will receive a message notifying you that the system is ready to go, and it will automatically start to figure out what the password is from the client.
     
 
        
@@ -67,4 +68,4 @@ Otherwise, start with Section 1 to set up servers on GENI.
  
  Max number of worker nodes: 10
  
- Input md5 hash for a 5-character password (a-z, A-Z) must be valid. We use this website for generating md5 hash: https://www.md5hashgenerator.com
+ The input md5 hash for the 5-character password (a-z, A-Z) must be valid. We used this website for generating the md5 hash: https://www.md5hashgenerator.com.
