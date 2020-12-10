@@ -99,18 +99,18 @@ if __name__ == '__main__':
                     request = msgs[-1].decode()
                     break
 
-        print("request:")
+        # print("request:")
         if (flag):
             request = client.recv(1024).decode()
-        print(request)
-        print("aaaa")
+        print("request"+str(request))
+        # print("aaaa")
         request = request.split("\t")
         md5_data = str(request[0])
-        print("md5 data:")
-        print(md5_data)
+        print("md5 data:"+ str(md5_data)
+        # print(md5_data)
         num_of_worker = int(request[1])
-        print("num of worker:")
-        print(num_of_worker)
+        print("num of worker:"+str(num_of_worker))
+        # print(num_of_worker)
         for i in range(num_of_worker):
             msg= md5_data+" "+str(num_of_worker)+" "+str(i)
             g_conn_pool[i+1].sendall(msg)
@@ -119,7 +119,7 @@ if __name__ == '__main__':
             time.sleep(2)
             
             if len(msgs) > 0:
-                print(3)
+                # print(3)
                 print(msgs)
                 for j in range(len(msgs)):
                     if len(msgs[j].encode())==5:
@@ -128,10 +128,10 @@ if __name__ == '__main__':
                         break
                 
             if ans != "None\n":
-                print(4)
+                # print(4)
                 print(ans)
                 break
-            print(5)
+            # print(5)
         if not flag:
             g_conn_pool[-1].send(ans.encode())
         if flag:
