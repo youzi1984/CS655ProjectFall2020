@@ -106,7 +106,7 @@ if __name__ == '__main__':
         # print("aaaa")
         request = request.split("\t")
         md5_data = str(request[0])
-        print("md5 data:"+ str(md5_data)
+        print("md5 data:"+ str(md5_data))
         # print(md5_data)
         num_of_worker = int(request[1])
         print("num of worker:"+str(num_of_worker))
