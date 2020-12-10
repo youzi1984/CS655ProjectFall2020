@@ -51,16 +51,13 @@ while True:
     #md5_value = md5_value.decode(encoding='utf-8')
     #n = int(n.decode(encoding='utf8'))
     #k = int(k.decode(encoding='utf8'))
-    print("md5=")
-    print(md5_value)
-    print("n=")
-    print(n)
-    print("seq=")
-    print(seq)
+    print("md5="+str(md5_value))
+    print("n="+str(n))
+    print("seq="+str(seq))
     
     start = time()
     result=decrypt_md5(md5_value, n, seq)
-    if result:
+    if result and result!="None":
         print('\n Success: '+md5_value+'==>'+result)
     print('Time used:',time()-start)
     
