@@ -89,7 +89,7 @@ if __name__ == '__main__':
     ans = "None\n"
     flag = True
     while True:
-        print(msgs)
+        # print(msgs)
         #msgs.clear()
         print("Waiting for web request...")
         if not flag:
