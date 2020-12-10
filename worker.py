@@ -22,10 +22,8 @@ def decrypt_md5(md5_value, n, i):
 
     md5_value=md5_value.lower()
     k = float(52 / n)
-    print("k:")
-    print(k)
     for j in range(int(round(k * i)), int(round(k * i + k))):
-        print(ascii_letters[j])
+        print("Checking password starting with "+str(ascii_letters[j]))
         for item in product(list(all_letters), repeat=4):
         # for item in permutations(all_letters,4):
             item=ascii_letters[j]+''.join(item)
@@ -43,7 +41,7 @@ print(s.recv(1024).decode(encoding='utf8'))
 
 while True:
     sentence = s.recv(1024)
-    print("sentence:")
+    print("Receive the message from job server:")
     print(sentence)
     md5_value, n, seq = sentence.split( )
     n = int(n)
@@ -51,9 +49,9 @@ while True:
     #md5_value = md5_value.decode(encoding='utf-8')
     #n = int(n.decode(encoding='utf8'))
     #k = int(k.decode(encoding='utf8'))
-    print("md5="+str(md5_value))
-    print("n="+str(n))
-    print("seq="+str(seq))
+    print("md5= "+str(md5_value))
+    print("n= "+str(n))
+    print("seq= "+str(seq))
     
     start = time()
     result=decrypt_md5(md5_value, n, seq)
