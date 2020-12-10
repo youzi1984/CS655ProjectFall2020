@@ -53,7 +53,7 @@ def message_handle(worker):
         bytes = worker.recv(1024)
         msgs.append(bytes.decode(encoding='utf8'))
 
-        print("message from worker:", bytes.decode(encoding='utf8'))
+        # print("message from worker:", bytes.decode(encoding='utf8'))
 
         if len(bytes) == 0: #doesn't matter, not important
 
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     while True:
         print(msgs)
         #msgs.clear()
-        print("Waiting from web:")
+        print("Waiting for web request...")
         if not flag:
             while(True):
                 time.sleep(10)
@@ -102,7 +102,7 @@ if __name__ == '__main__':
         # print("request:")
         if (flag):
             request = client.recv(1024).decode()
-        print("request"+str(request))
+        print("Receive request from web: "+str(request))
         # print("aaaa")
         request = request.split("\t")
         md5_data = str(request[0])
@@ -120,7 +120,7 @@ if __name__ == '__main__':
             
             if len(msgs) > 0:
                 # print(3)
-                print(msgs)
+                # print(msgs)
                 for j in range(len(msgs)):
                     if len(msgs[j].encode())==5:
                         ans = msgs[j]
@@ -129,7 +129,7 @@ if __name__ == '__main__':
                 
             if ans != "None\n":
                 # print(4)
-                print(ans)
+                print("Receive the password from worker: "+str(ans))
                 break
             # print(5)
         if not flag:
