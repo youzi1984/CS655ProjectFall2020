@@ -1,9 +1,6 @@
 # CS655ProjectFall2020
 ## Run password cracker
 
-If you're running the project on nodes that are already reserved and configured by us, then please go to Section 2 directly.
-Otherwise, start with Section 1 to set up servers on GENI.
-
 ### Section 1: Deploying the project on GENI
 
 1. Reserve resources on GENI
@@ -48,7 +45,7 @@ Note: Make sure to do the following in this precise order.
 
     If you're using our GENI resources, go to http://web-server.passwordcrackerglsz.ch-geni-net.geni.uchicago.edu:9007/
     
-3.  Enter the md5 hash belonging to the 5 letter password with alphabet (a-z, A-Z).
+3.  Enter the md5 hash belonging to the 5 letter password.
     
     Select the number of workers (1-10) with the arrow on the right (do not enter directly).
     
@@ -64,8 +61,10 @@ Note: Make sure to do the following in this precise order.
        
  **Important assumptions**
  
- Max number of clients (web interface) at the same time: 1
+ Max number of web interface at the same time: 1
  
  Max number of worker nodes: 10
  
- The input md5 hash for the 5-character password (a-z, A-Z) must be valid. We used this website for generating the md5 hash: https://www.md5hashgenerator.com.
+ The input md5 hash for the 5-character password (a-z, A-Z) must be valid. 
+ 
+ We used this website for generating the md5 hash: https://www.md5hashgenerator.com.
