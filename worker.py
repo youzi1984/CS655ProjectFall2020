@@ -15,7 +15,7 @@ from time import time
 all_letters=ascii_letters
 
 def decrypt_md5(md5_value, n, i):
-
+    # n is the total number of workers, and i is the sequence number of current node.
     if len(md5_value)!=32:
         print('error')
         return
@@ -23,6 +23,7 @@ def decrypt_md5(md5_value, n, i):
     md5_value=md5_value.lower()
     k = float(52 / n)
     for j in range(int(round(k * i)), int(round(k * i + k))):
+        # We devide the starting letter based on the sequence number.
         print("Checking password starting with "+str(ascii_letters[j]))
         for item in product(list(all_letters), repeat=4):
         # for item in permutations(all_letters,4):
@@ -30,6 +31,7 @@ def decrypt_md5(md5_value, n, i):
             # print('.',end='')
             if md5(item.encode()).hexdigest()==md5_value:
                 return item
+    # Fail to find the password.
     return "None"
 
 s = socket.socket()
@@ -56,6 +58,7 @@ while True:
     start = time()
     result=decrypt_md5(md5_value, n, seq)
     if result and result!="None":
+        # If this worker find the password successfully, return it to the job server.
         print('\n Success: '+md5_value+'==>'+result)
     print('Time used:',time()-start)
     
